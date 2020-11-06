@@ -6,6 +6,8 @@ module.exports = StyleSheet.create({
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
+    height: '100%',
   },
   background: {
     width: '100%',
@@ -14,10 +16,22 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    color: 'purple',
-    fontWeight: 'bold',
-    fontSize: 100,
-    textAlign: 'center',
+  animated: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+  },
+  image: {
+    width: '100%',
+    height: '30%',
+  },
+  pressable: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
   },
 });

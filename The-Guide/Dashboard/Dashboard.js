@@ -9,6 +9,12 @@ const styles = require('./style');
 function Dashboard({ navigation }) {
   const [value, onChangeText] = React.useState('');
   const [display, onDisplayText] = React.useState('');
+  const scroll = React.useRef();
+
+  const goToTop = () => {
+    scroll.current.scrollTo({ y: 0, animated: true });
+  };
+
   return (
     <View style={styles.view}>
       <Pressable
@@ -22,12 +28,14 @@ function Dashboard({ navigation }) {
           placeholder={'Search the guide...'}
           placeholderTextColor={'grey'}
           onSubmitEditing={() => {
+            onDisplayText('Loading...');
             apiClientService.search({ value }, onDisplayText);
             console.log({ value });
             onChangeText('');
+            goToTop();
           }}
         />
-        <ScrollView style={styles.scrollview}>
+        <ScrollView ref={scroll} style={styles.scrollview}>
           <Text style={styles.text}>{display}</Text>
         </ScrollView>
         <StatusBar style="auto" />

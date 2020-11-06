@@ -1,5 +1,11 @@
 import 'react-native-gesture-handler';
-import { Text, View, ImageBackground, Pressable, Animated } from 'react-native';
+import {
+  View,
+  ImageBackground,
+  Pressable,
+  Animated,
+  Image,
+} from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import React, { useRef } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
@@ -25,19 +31,27 @@ function TitleScreen({ navigation }) {
 
   return (
     <View style={styles.view}>
-      <Pressable onPress={() => navigation.navigate('Dashboard')}>
+      <Pressable
+        onPress={() => navigation.navigate('Dashboard')}
+        style={styles.pressable}
+      >
         <ImageBackground
           source={require('../assets/milky-way.jpg')}
           style={styles.background}
         >
           <Animated.View
-            style={{
-              opacity: fadeIn,
-            }}
+            style={
+              ({
+                opacity: fadeIn,
+              },
+              styles.animated)
+            }
           >
-            <Text style={styles.text}>Don't Panic!</Text>
+            <Image
+              style={styles.image}
+              source={require('../assets/Title.png')}
+            />
           </Animated.View>
-
           <StatusBar style="auto" />
         </ImageBackground>
       </Pressable>
