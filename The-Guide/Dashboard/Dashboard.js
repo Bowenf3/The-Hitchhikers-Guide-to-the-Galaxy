@@ -1,10 +1,11 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Text, View, Pressable, TextInput } from 'react-native';
+import { Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native-gesture-handler';
-const apiClientService = require('../ApiClientService');
 const styles = require('./style');
+
+import SearchBar from './SearchBar';
 
 function Dashboard({ navigation }) {
   const [value, onChangeText] = React.useState('');
@@ -17,29 +18,16 @@ function Dashboard({ navigation }) {
 
   return (
     <View style={styles.view}>
-      {/* <Pressable
-        style={styles.pressable}
-        // onPress={() => navigation.navigate('Title')}
-      > */}
-      <TextInput
-        style={styles.textinput}
-        onChangeText={(text) => onChangeText(text)}
+      <SearchBar
+        onChangeText={onChangeText}
         value={value}
-        placeholder={'Search the guide...'}
-        placeholderTextColor={'grey'}
-        onSubmitEditing={() => {
-          onDisplayText('Loading...');
-          apiClientService.search({ value }, onDisplayText);
-          console.log({ value });
-          onChangeText('');
-          goToTop();
-        }}
+        onDisplayText={onDisplayText}
+        goToTop={goToTop}
       />
       <ScrollView ref={scroll} style={styles.scrollview}>
         <Text style={styles.text}>{display}</Text>
       </ScrollView>
-      <StatusBar style="auto" />
-      {/* </Pressable> */}
+      <StatusBar translucent={true} backgroundColor={'transparent'} />
     </View>
   );
 }

@@ -13,11 +13,12 @@ function checkForReference(input, onDisplayText) {
 
 module.exports = {
   search(input, onDisplayText) {
+    console.log('here', input);
     if (checkForReference(input, onDisplayText)) {
       return;
     } else {
       fetch(
-        `http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${input.value}&format=json`,
+        `http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${input}&format=json`,
       )
         .then((data) => data.json())
         .then((data) => {
@@ -33,7 +34,7 @@ module.exports = {
         })
         .catch((error) => {
           onDisplayText(
-            `Hi there! This is Eddie your shipboard computer just popping in to say have a great day guys! \n I see you were searching for ${input.value}... unfortunately our field researchers haven't added an entry yet! \n Share and Enjoy!`,
+            `Hi there! This is Eddie your shipboard computer! Just popping in to say how excited I am to be working with you guys! \n\nI see you were searching for ${input.value}... Unfortunately, our field researchers haven't added an entry for that yet! You have a great day now! \n\nShare and Enjoy!`,
           );
         });
     }

@@ -28,6 +28,7 @@ module.exports = StyleSheet.create({
     margin: 20,
   },
   text: {
+    textAlign: 'left',
     color: 'white',
   },
 });
