@@ -20,6 +20,7 @@ function TitleScreen({ navigation }) {
       duration: 10000,
       useNativeDriver: true,
     }).start();
+    console.log('called', fadeIn);
   }, [fadeIn]);
 
   useFocusEffect(
@@ -40,12 +41,14 @@ function TitleScreen({ navigation }) {
           style={styles.background}
         >
           <Animated.View
-            style={
-              ({
-                opacity: fadeIn,
-              },
-              styles.animated)
-            }
+            style={{
+              opacity: fadeIn,
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              height: '100%',
+            }}
           >
             <Image
               style={styles.image}

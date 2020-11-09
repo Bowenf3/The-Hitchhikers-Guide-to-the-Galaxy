@@ -17,29 +17,29 @@ function Dashboard({ navigation }) {
 
   return (
     <View style={styles.view}>
-      <Pressable
+      {/* <Pressable
         style={styles.pressable}
-        onPress={() => navigation.navigate('Title')}
-      >
-        <TextInput
-          style={styles.textinput}
-          onChangeText={(text) => onChangeText(text)}
-          value={value}
-          placeholder={'Search the guide...'}
-          placeholderTextColor={'grey'}
-          onSubmitEditing={() => {
-            onDisplayText('Loading...');
-            apiClientService.search({ value }, onDisplayText);
-            console.log({ value });
-            onChangeText('');
-            goToTop();
-          }}
-        />
-        <ScrollView ref={scroll} style={styles.scrollview}>
-          <Text style={styles.text}>{display}</Text>
-        </ScrollView>
-        <StatusBar style="auto" />
-      </Pressable>
+        // onPress={() => navigation.navigate('Title')}
+      > */}
+      <TextInput
+        style={styles.textinput}
+        onChangeText={(text) => onChangeText(text)}
+        value={value}
+        placeholder={'Search the guide...'}
+        placeholderTextColor={'grey'}
+        onSubmitEditing={() => {
+          onDisplayText('Loading...');
+          apiClientService.search({ value }, onDisplayText);
+          console.log({ value });
+          onChangeText('');
+          goToTop();
+        }}
+      />
+      <ScrollView ref={scroll} style={styles.scrollview}>
+        <Text style={styles.text}>{display}</Text>
+      </ScrollView>
+      <StatusBar style="auto" />
+      {/* </Pressable> */}
     </View>
   );
 }

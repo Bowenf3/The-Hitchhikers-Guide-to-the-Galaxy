@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 module.exports = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#FFD700',
     alignItems: 'center',
     justifyContent: 'center',
   },
