@@ -9,8 +9,9 @@ function SearchBar(props) {
       style={styles.textinput}
       onChangeText={(text) => props.onChangeText(text)}
       value={props.value}
-      placeholder={'Search the guide...'}
-      placeholderTextColor={'grey'}
+      placeholder={' Search the guide...'}
+      placeholderTextColor={'#1b401b'}
+      selectionColor={'#94d494'}
       onSubmitEditing={() => {
         props.onDisplayText('Loading...');
         apiClientService.search(props.value, props.onDisplayText);

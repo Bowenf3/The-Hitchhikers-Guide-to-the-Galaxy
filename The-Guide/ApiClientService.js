@@ -1,5 +1,5 @@
 function checkForReference(input, onDisplayText) {
-  switch (input.value) {
+  switch (input) {
     case 'Earth':
       onDisplayText('Mostly Harmless');
       return true;

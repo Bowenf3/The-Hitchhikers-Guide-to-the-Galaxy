@@ -3,7 +3,13 @@ import { StyleSheet } from 'react-native';
 module.exports = StyleSheet.create({
   view: {
     flex: 1,
-    backgroundColor: '#FFD700',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  background: {
+    flex: 1,
+    height: '100%',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -12,23 +18,26 @@ module.exports = StyleSheet.create({
     width: '100%',
     flex: 1,
     flexDirection: 'column',
-
     alignItems: 'center',
   },
   textinput: {
     height: 40,
     width: '60%',
-    borderColor: 'gray',
+    borderColor: '#204520',
     borderWidth: 1,
-    color: 'white',
+    color: '#94d494',
+    textShadowColor: '#66FF66',
+    textShadowRadius: 20,
     textAlign: 'center',
     marginTop: 40,
   },
   scrollview: {
-    margin: 20,
+    margin: 10,
   },
   text: {
-    textAlign: 'left',
-    color: 'white',
+    textAlign: 'auto',
+    color: '#94d494',
+    textShadowColor: '#66FF66',
+    textShadowRadius: 20,
   },
 });
