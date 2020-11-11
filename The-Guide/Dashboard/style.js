@@ -21,6 +21,7 @@ module.exports = StyleSheet.create({
     alignItems: 'center',
   },
   textinput: {
+    position: 'absolute',
     height: 40,
     width: '60%',
     borderColor: '#204520',
@@ -29,7 +30,13 @@ module.exports = StyleSheet.create({
     textShadowColor: '#66FF66',
     textShadowRadius: 20,
     textAlign: 'center',
-    marginTop: 40,
+    top: 40,
+  },
+  searchresult: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 80,
   },
   scrollview: {
     margin: 10,

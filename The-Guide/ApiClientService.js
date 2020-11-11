@@ -1,10 +1,10 @@
-function checkForReference(input, onDisplayText) {
+function checkForReference(input, setDisplayText) {
   switch (input) {
     case 'Earth':
-      onDisplayText('Mostly Harmless');
+      setDisplayText('Mostly Harmless');
       return true;
     case 'Vogons':
-      onDisplayText('If you want a drink from a Vogon... forget it.');
+      setDisplayText('If you want a drink from a Vogon... forget it.');
       return true;
     default:
       break;
@@ -12,9 +12,9 @@ function checkForReference(input, onDisplayText) {
 }
 
 module.exports = {
-  search(input, onDisplayText) {
+  search(input, setDisplayText) {
     console.log('here', input);
-    if (checkForReference(input, onDisplayText)) {
+    if (checkForReference(input, setDisplayText)) {
       return;
     } else {
       fetch(
@@ -29,11 +29,11 @@ module.exports = {
           )
             .then((res) => res.json())
             .then((res) => {
-              onDisplayText(res.query.pages[id].extract);
+              setDisplayText(res.query.pages[id].extract);
             });
         })
         .catch((error) => {
-          onDisplayText(
+          setDisplayText(
             `Hi there! This is Eddie your shipboard computer! Just popping in to say how excited I am to be working with you guys! \n\nI see you were searching for ${input.value}... Unfortunately, our field researchers haven't added an entry for that yet! You have a great day now! \n\nShare and Enjoy!`,
           );
         });

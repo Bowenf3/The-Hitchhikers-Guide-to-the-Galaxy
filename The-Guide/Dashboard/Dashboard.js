@@ -7,16 +7,18 @@ const styles = require('./style');
 
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
-import MenuButton from './MenuButton';
+import MenuDisplay from './MenuDisplay';
 
 function Dashboard({ navigation }) {
-  const [value, onChangeText] = React.useState('');
-  const [display, onDisplayText] = React.useState('');
-  const scroll = React.useRef();
+  const [text, setText] = React.useState('');
+  const [display, setDisplayText] = React.useState('');
+  const [menuToggle, setMenuToggle] = React.useState(true);
+  const [searchResultToggle, setSearchResultToggle] = React.useState(false);
+  // const scroll = React.useRef();
 
-  const goToTop = () => {
-    scroll.current.scrollTo({ y: 0, animated: true });
-  };
+  // const goToTop = () => {
+  //   // scroll.current.scrollTo({ y: 0, animated: true });
+  // };
 
   return (
     <View style={styles.view}>
@@ -37,13 +39,23 @@ function Dashboard({ navigation }) {
         ]}
       >
         <SearchBar
-          onChangeText={onChangeText}
-          value={value}
-          onDisplayText={onDisplayText}
-          goToTop={goToTop}
+          setText={setText}
+          value={text}
+          setDisplayText={setDisplayText}
+          // goToTop={goToTop}
+          setMenuToggle={setMenuToggle}
+          setSearchResultToggle={setSearchResultToggle}
         />
-        <SearchResult scroll={scroll} display={display} />
-        {/* <MenuButton /> */}
+        {/*TODO: conditional rendering} */}
+        {menuToggle && <MenuDisplay />}
+        {searchResultToggle && (
+          <SearchResult
+            // scroll={scroll}
+            display={display}
+            setMenuToggle={setMenuToggle}
+            setSearchResultToggle={setSearchResultToggle}
+          />
+        )}
         <StatusBar translucent={true} backgroundColor={'transparent'} />
       </LinearGradient>
     </View>
