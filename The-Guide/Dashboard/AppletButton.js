@@ -18,8 +18,8 @@ function AppletButton(props) {
         }}
       >
         <Image
-          style={{ width: 80, height: 90, margin: 10 }}
-          source={require('../assets/hand-157251_640.png')}
+          style={{ width: 90, height: 90, margin: 10 }}
+          source={props.sourceFile}
         />
       </Pressable>
     </View>

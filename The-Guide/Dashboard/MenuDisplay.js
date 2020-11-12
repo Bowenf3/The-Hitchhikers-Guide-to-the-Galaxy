@@ -28,34 +28,42 @@ function MenuDisplay(props) {
         <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletOneToggle}
+          sourceFile={require('../assets/towel-304192_1280.png')}
         />
         <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletTwoToggle}
+          sourceFile={require('../assets/button-155149_1280.png')}
         />
         <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletThreeToggle}
+          sourceFile={require('../assets/button-153682_1280.png')}
         />
         <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletFourToggle}
+          sourceFile={require('../assets/button-153682_1280.png')}
         />
         <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletFiveToggle}
+          sourceFile={require('../assets/button-153682_1280.png')}
         />
         <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletSixToggle}
+          sourceFile={require('../assets/button-153682_1280.png')}
         />
         <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletSevenToggle}
+          sourceFile={require('../assets/button-153682_1280.png')}
         />
         <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletEightToggle}
+          sourceFile={require('../assets/button-153682_1280.png')}
         />
       </View>
     </BlurView>

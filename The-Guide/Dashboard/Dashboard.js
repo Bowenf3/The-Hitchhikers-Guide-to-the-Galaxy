@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
 const styles = require('./style');
+const { towel } = require('../assets/towel-uses.json');
 
 import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
@@ -86,22 +87,18 @@ function Dashboard({ navigation }) {
           />
         )}
         {appletOneToggle && (
-          <View>
-            <Text>One</Text>
-            <MenuButton
-              setMenuToggle={setMenuToggle}
-              setOtherToggle={setAppletOneToggle}
-            />
-          </View>
+          <SearchResult
+            display={towel}
+            setMenuToggle={setMenuToggle}
+            setOtherToggle={setAppletOneToggle}
+          />
         )}
         {appletTwoToggle && (
-          <View>
-            <Text>Two</Text>
-            <MenuButton
-              setMenuToggle={setMenuToggle}
-              setOtherToggle={setAppletTwoToggle}
-            />
-          </View>
+          <SearchResult
+            display={'Please do not press this button again'}
+            setMenuToggle={setMenuToggle}
+            setOtherToggle={setAppletTwoToggle}
+          />
         )}
         {appletThreeToggle && (
           <View>
