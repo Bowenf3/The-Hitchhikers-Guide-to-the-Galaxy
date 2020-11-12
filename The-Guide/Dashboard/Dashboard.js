@@ -10,7 +10,8 @@ import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import MenuDisplay from './MenuDisplay';
 import MenuButton from './MenuButton';
-import Calculator from './Calculator';
+import Calculator from './Applets/Calculator/Calculator';
+import CrisisInducer from './Applets/CrisisInducer/CrisisInducer';
 
 function Dashboard({ navigation }) {
   const [text, setText] = React.useState('');
@@ -93,15 +94,7 @@ function Dashboard({ navigation }) {
             setOtherToggle={setAppletTwoToggle}
           />
         )}
-        {appletThreeToggle && (
-          <View>
-            <Text>Crisis Inducer</Text>
-            <MenuButton
-              setMenuToggle={setMenuToggle}
-              setOtherToggle={setAppletThreeToggle}
-            />
-          </View>
-        )}
+        {appletThreeToggle && <CrisisInducer />}
         {appletFourToggle && (
           <View>
             <Text>Peril Sensitive Mode</Text>

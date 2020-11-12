@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TextInput } from 'react-native';
-import MenuButton from './MenuButton';
-const styles = require('./style');
+import MenuButton from '../../MenuButton';
+const styles = require('../../style');
 
 function Calculator(props) {
   const [number, setNumber] = React.useState('0');
@@ -40,7 +40,6 @@ function Calculator(props) {
         selectionColor={'#94d494'}
         onSubmitEditing={() => {
           setNumber('42');
-          console.log(props.value);
         }}
       />
       <View style={{ position: 'absolute', bottom: 5 }}>
