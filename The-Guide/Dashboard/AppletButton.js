@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { Image, Pressable, View } from 'react-native';
 
-function MenuButton(props) {
+function AppletButton(props) {
   return (
     <View>
       <Pressable
@@ -13,16 +13,16 @@ function MenuButton(props) {
           },
         ]}
         onPress={() => {
-          props.setMenuToggle(true);
-          props.setSearchResultToggle(false);
+          props.setMenuToggle(false);
+          props.setOtherToggle(true);
         }}
       >
         <Image
-          style={{ width: 50, height: 60, marginBottom: 15 }}
+          style={{ width: 80, height: 90, margin: 10 }}
           source={require('../assets/hand-157251_640.png')}
         />
       </Pressable>
     </View>
   );
 }
-export default MenuButton;
+export default AppletButton;

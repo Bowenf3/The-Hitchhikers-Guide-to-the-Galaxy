@@ -1,35 +1,40 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Image, Pressable, View } from 'react-native';
+import { View } from 'react-native';
+import { BlurView } from 'expo-blur';
+import AppletButton from './AppletButton';
 
 function MenuDisplay(props) {
   return (
-    <View>
-      <Pressable>
-        <Image
-          style={{ width: 50, height: 60, marginBottom: 15 }}
-          source={require('../assets/hand-157251_640.png')}
-        />
-      </Pressable>
-      <Pressable>
-        <Image
-          style={{ width: 50, height: 60, marginBottom: 15 }}
-          source={require('../assets/hand-157251_640.png')}
-        />
-      </Pressable>
-      <Pressable>
-        <Image
-          style={{ width: 50, height: 60, marginBottom: 15 }}
-          source={require('../assets/hand-157251_640.png')}
-        />
-      </Pressable>
-      <Pressable>
-        <Image
-          style={{ width: 50, height: 60, marginBottom: 15 }}
-          source={require('../assets/hand-157251_640.png')}
-        />
-      </Pressable>
-    </View>
+    <BlurView
+      intensity={40}
+      style={{
+        // backgroundColor: 'white',
+        padding: 10,
+        width: '70%',
+        height: '65%',
+      }}
+    >
+      <View
+        style={{
+          // backgroundColor: 'red',
+          flex: 1,
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+        }}
+      >
+        <AppletButton />
+        <AppletButton />
+        <AppletButton />
+        <AppletButton />
+        <AppletButton />
+        <AppletButton />
+        <AppletButton />
+        <AppletButton />
+      </View>
+    </BlurView>
   );
 }
 export default MenuDisplay;

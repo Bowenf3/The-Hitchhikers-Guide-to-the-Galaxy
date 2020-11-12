@@ -5,6 +5,8 @@ module.exports = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    height: '100%',
+    width: '100%',
   },
   background: {
     flex: 1,
