@@ -10,6 +10,7 @@ import SearchBar from './SearchBar';
 import SearchResult from './SearchResult';
 import MenuDisplay from './MenuDisplay';
 import MenuButton from './MenuButton';
+import Calculator from './Calculator';
 
 function Dashboard({ navigation }) {
   const [text, setText] = React.useState('');
@@ -24,11 +25,6 @@ function Dashboard({ navigation }) {
   const [appletSixToggle, setAppletSixToggle] = React.useState(false);
   const [appletSevenToggle, setAppletSevenToggle] = React.useState(false);
   const [appletEightToggle, setAppletEightToggle] = React.useState(false);
-  // const scroll = React.useRef();
-
-  // const goToTop = () => {
-  //   // scroll.current.scrollTo({ y: 0, animated: true });
-  // };
 
   return (
     <View style={styles.view}>
@@ -52,7 +48,6 @@ function Dashboard({ navigation }) {
           setText={setText}
           value={text}
           setDisplayText={setDisplayText}
-          // goToTop={goToTop}
           setMenuToggle={setMenuToggle}
           setSearchResultToggle={setSearchResultToggle}
           setAppletOneToggle={setAppletOneToggle}
@@ -64,7 +59,6 @@ function Dashboard({ navigation }) {
           setAppletSevenToggle={setAppletSevenToggle}
           setAppletEightToggle={setAppletEightToggle}
         />
-        {/*TODO: conditional rendering} */}
         {menuToggle && (
           <MenuDisplay
             setMenuToggle={setMenuToggle}
@@ -80,7 +74,6 @@ function Dashboard({ navigation }) {
         )}
         {searchResultToggle && (
           <SearchResult
-            // scroll={scroll}
             display={display}
             setMenuToggle={setMenuToggle}
             setOtherToggle={setSearchResultToggle}
@@ -102,7 +95,7 @@ function Dashboard({ navigation }) {
         )}
         {appletThreeToggle && (
           <View>
-            <Text>Three</Text>
+            <Text>Crisis Inducer</Text>
             <MenuButton
               setMenuToggle={setMenuToggle}
               setOtherToggle={setAppletThreeToggle}
@@ -111,7 +104,7 @@ function Dashboard({ navigation }) {
         )}
         {appletFourToggle && (
           <View>
-            <Text>Four</Text>
+            <Text>Peril Sensitive Mode</Text>
             <MenuButton
               setMenuToggle={setMenuToggle}
               setOtherToggle={setAppletFourToggle}
@@ -119,17 +112,14 @@ function Dashboard({ navigation }) {
           </View>
         )}
         {appletFiveToggle && (
-          <View>
-            <Text>Five</Text>
-            <MenuButton
-              setMenuToggle={setMenuToggle}
-              setOtherToggle={setAppletFiveToggle}
-            />
-          </View>
+          <Calculator
+            setMenuToggle={setMenuToggle}
+            setOtherToggle={setAppletFiveToggle}
+          />
         )}
         {appletSixToggle && (
           <View>
-            <Text>Six</Text>
+            <Text>Marvin's Demotivational Quotes</Text>
             <MenuButton
               setMenuToggle={setMenuToggle}
               setOtherToggle={setAppletSixToggle}
@@ -138,7 +128,7 @@ function Dashboard({ navigation }) {
         )}
         {appletSevenToggle && (
           <View>
-            <Text>Seven</Text>
+            <Text>Babel Fish</Text>
             <MenuButton
               setMenuToggle={setMenuToggle}
               setOtherToggle={setAppletSevenToggle}
@@ -147,7 +137,7 @@ function Dashboard({ navigation }) {
         )}
         {appletEightToggle && (
           <View>
-            <Text>Eight</Text>
+            <Text>Total Perspective Vortex</Text>
             <MenuButton
               setMenuToggle={setMenuToggle}
               setOtherToggle={setAppletEightToggle}

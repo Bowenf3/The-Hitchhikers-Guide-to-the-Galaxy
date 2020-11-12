@@ -27,7 +27,6 @@ function SearchBar(props) {
         apiClientService.search(props.value, props.setDisplayText);
         console.log(props.value);
         props.setText('');
-        // props.goToTop();
       }}
     />
   );
