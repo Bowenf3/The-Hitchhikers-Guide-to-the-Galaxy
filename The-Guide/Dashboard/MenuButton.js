@@ -14,7 +14,7 @@ function MenuButton(props) {
         ]}
         onPress={() => {
           props.setMenuToggle(true);
-          props.setSearchResultToggle(false);
+          props.setOtherToggle(false);
         }}
       >
         <Image

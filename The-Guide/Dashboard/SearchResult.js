@@ -17,7 +17,7 @@ function SearchResult(props) {
       </ScrollView>
       <MenuButton
         setMenuToggle={props.setMenuToggle}
-        setSearchResultToggle={props.setSearchResultToggle}
+        setOtherToggle={props.setOtherToggle}
       />
     </View>
   );

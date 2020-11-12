@@ -15,6 +15,14 @@ function SearchBar(props) {
       onSubmitEditing={() => {
         props.setSearchResultToggle(true);
         props.setMenuToggle(false);
+        props.setAppletOneToggle(false);
+        props.setAppletTwoToggle(false);
+        props.setAppletThreeToggle(false);
+        props.setAppletFourToggle(false);
+        props.setAppletFiveToggle(false);
+        props.setAppletSixToggle(false);
+        props.setAppletSevenToggle(false);
+        props.setAppletEightToggle(false);
         props.setDisplayText('Loading...');
         apiClientService.search(props.value, props.setDisplayText);
         console.log(props.value);

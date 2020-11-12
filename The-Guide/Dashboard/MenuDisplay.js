@@ -25,14 +25,38 @@ function MenuDisplay(props) {
           flexWrap: 'wrap',
         }}
       >
-        <AppletButton />
-        <AppletButton />
-        <AppletButton />
-        <AppletButton />
-        <AppletButton />
-        <AppletButton />
-        <AppletButton />
-        <AppletButton />
+        <AppletButton
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setAppletOneToggle}
+        />
+        <AppletButton
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setAppletTwoToggle}
+        />
+        <AppletButton
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setAppletThreeToggle}
+        />
+        <AppletButton
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setAppletFourToggle}
+        />
+        <AppletButton
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setAppletFiveToggle}
+        />
+        <AppletButton
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setAppletSixToggle}
+        />
+        <AppletButton
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setAppletSevenToggle}
+        />
+        <AppletButton
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setAppletEightToggle}
+        />
       </View>
     </BlurView>
   );
