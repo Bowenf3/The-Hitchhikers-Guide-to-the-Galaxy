@@ -94,7 +94,12 @@ function Dashboard({ navigation }) {
             setOtherToggle={setAppletTwoToggle}
           />
         )}
-        {appletThreeToggle && <CrisisInducer />}
+        {appletThreeToggle && (
+          <CrisisInducer
+            setMenuToggle={setMenuToggle}
+            setOtherToggle={setAppletThreeToggle}
+          />
+        )}
         {appletFourToggle && (
           <View>
             <Text>Peril Sensitive Mode</Text>
