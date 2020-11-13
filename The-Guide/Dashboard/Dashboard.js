@@ -12,6 +12,7 @@ import MenuDisplay from './MenuDisplay';
 import MenuButton from './MenuButton';
 import Calculator from './Applets/Calculator/Calculator';
 import CrisisInducer from './Applets/CrisisInducer/CrisisInducer';
+import PerilSense from './Applets/Peril Sensitive Mode/PerilSense';
 
 function Dashboard({ navigation }) {
   const [text, setText] = React.useState('');
@@ -101,13 +102,17 @@ function Dashboard({ navigation }) {
           />
         )}
         {appletFourToggle && (
-          <View>
-            <Text>Peril Sensitive Mode</Text>
-            <MenuButton
-              setMenuToggle={setMenuToggle}
-              setOtherToggle={setAppletFourToggle}
-            />
-          </View>
+          // <View>
+          //   <Text>Peril Sensitive Mode</Text>
+          //   <MenuButton
+          //     setMenuToggle={setMenuToggle}
+          //     setOtherToggle={setAppletFourToggle}
+          //   />
+          // </View>
+          <PerilSense
+            setMenuToggle={setMenuToggle}
+            setOtherToggle={setAppletFourToggle}
+          />
         )}
         {appletFiveToggle && (
           <Calculator

@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CountDown from 'react-native-countdown-component';
 import Slider from '@react-native-community/slider';
 import { View, Button, Text } from 'react-native';
 import MenuButton from '../../MenuButton';
 import { TextInput } from 'react-native-gesture-handler';
+import Timer from './Timer';
 
 function CrisisInducer(props) {
-  const [delay, setDelay] = React.useState(0);
-  const [duration, setDuration] = React.useState(0);
+  const [delay, setDelay] = React.useState(5); //value of delay counter
+  const [duration, setDuration] = React.useState(10); // value of duration counter
   const [crisisLevel, setCrisisLevel] = React.useState(0);
-  const [delayRunning, setDelayRunning] = React.useState(false);
-  const [durationRunning, setDurationRunning] = React.useState(false);
-  const [reset, setReset] = React.useState([]);
-  const [firstTime, setFirstTime] = React.useState(true);
-  const [delayTime, setDelayTime] = React.useState(0);
-  const [durationTime, setDurationTime] = React.useState(0);
+  const [delayRunning, setDelayRunning] = React.useState(false); //is delay timer active?
+  const [durationRunning, setDurationRunning] = React.useState(false); //is duration timer active?
+  const [reset, setReset] = React.useState([]); //initial delay and duration timer values
+  const [firstTime, setFirstTime] = React.useState(true); //values we'll have to reset to
+  const [delayTime, setDelayTime] = React.useState(0); //input form state
+  const [durationTime, setDurationTime] = React.useState(0); //input form state
+  const [test, setTest] = React.useState(1);
 
-  console.log('delay', delay);
-  console.log('duration', duration);
-  console.log('reset', reset);
+  // console.log('delay', delay);
+  // console.log('duration', duration);
+  // console.log('reset', reset);
+  // console.log('delayRunning', delayRunning);
+
+  // console.log('test', test);
+
+  // useEffect(()=> {
+
+  // },[])
+
+  const handleReset = (e) => {
+    setDelay((delay) => reset[0]); //this works
+    setDuration((duration) => reset[1]); //this works
+    setTest(test + 1);
+    setDelayRunning(false);
+  };
 
   return (
     <View
@@ -49,7 +65,7 @@ function CrisisInducer(props) {
             fontSize: 30,
           }}
           onChangeText={(number) => setDelayTime(Number(number))}
-          value={delayTime}
+          value={String(delayTime)}
           keyboardType={'phone-pad'}
           placeholder={'0'}
           placeholderTextColor={'#1b401b'}
@@ -72,7 +88,7 @@ function CrisisInducer(props) {
             fontSize: 30,
           }}
           onChangeText={(number) => setDurationTime(Number(number))}
-          value={durationTime}
+          value={String(durationTime)}
           keyboardType={'phone-pad'}
           placeholder={'0'}
           placeholderTextColor={'#1b401b'}
@@ -83,10 +99,10 @@ function CrisisInducer(props) {
         />
       </View>
       <Text title={'Delay'}>Delay</Text>
-      <CountDown
-        id={'1'}
+      {/* <CountDown
+        id={String(test)}
         running={delayRunning}
-        until={delay}
+        until={delay} //value it will count down until
         timeToShow={['M', 'S']}
         onFinish={() => {
           setDelayRunning(false);
@@ -100,7 +116,8 @@ function CrisisInducer(props) {
         digitStyle={{ backgroundColor: 'green' }}
         digitTxtStyle={{ color: '#94d494' }}
         timeLabelStyle={{ color: '#94d494' }}
-      />
+      /> */}
+      <Timer id={0} time={delay} isActive={delayRunning} setDelay={setDelay} />
       <Text title={'Duration'}>Duration</Text>
       <CountDown
         id={'2'}
@@ -146,7 +163,7 @@ function CrisisInducer(props) {
             title={'Start'}
             onPress={(e) => {
               if (firstTime === true) {
-                setReset([delay, duration]);
+                setReset(() => [delay, duration]);
                 setFirstTime(false);
               }
               if (delay === 0) {
@@ -175,10 +192,7 @@ function CrisisInducer(props) {
             style={{ padding: 40, margin: 1 }}
             color={'green'}
             title={'Reset'}
-            onPress={(e) => {
-              setDelay(reset[0]);
-              setDuration(reset[1]);
-            }}
+            onPress={handleReset}
           >
             Reset
           </Button>
