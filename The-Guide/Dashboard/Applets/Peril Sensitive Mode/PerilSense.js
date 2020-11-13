@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Overlay } from 'react-native-elements';
 import { Accelerometer } from 'expo-sensors';
 
 export default function PerilSense(props) {
@@ -48,9 +49,10 @@ export default function PerilSense(props) {
 
   return (
     <View
+      pointerEvents={'box-none'}
       style={{
-        // position: 'absolute',
-        // top: 81,
+        position: 'absolute',
+        elevation: 2,
         height: '100%',
         width: '100%',
         opacity: round(dark),

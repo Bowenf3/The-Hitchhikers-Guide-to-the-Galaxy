@@ -9,6 +9,8 @@ module.exports = StyleSheet.create({
     width: '100%',
   },
   background: {
+    position: 'relative',
+    zIndex: 1,
     flex: 1,
     height: '100%',
     width: '100%',
@@ -35,6 +37,7 @@ module.exports = StyleSheet.create({
     top: 40,
   },
   searchresult: {
+    elevation: 1,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

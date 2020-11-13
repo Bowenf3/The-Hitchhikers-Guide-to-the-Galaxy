@@ -30,6 +30,7 @@ function Dashboard({ navigation }) {
 
   return (
     <View style={styles.view}>
+      {appletFourToggle && <PerilSense />}
       <LinearGradient
         style={styles.background}
         start={{ x: 0, y: 0 }}
@@ -55,7 +56,7 @@ function Dashboard({ navigation }) {
           setAppletOneToggle={setAppletOneToggle}
           setAppletTwoToggle={setAppletTwoToggle}
           setAppletThreeToggle={setAppletThreeToggle}
-          setAppletFourToggle={setAppletFourToggle}
+          // setAppletFourToggle={setAppletFourToggle}
           setAppletFiveToggle={setAppletFiveToggle}
           setAppletSixToggle={setAppletSixToggle}
           setAppletSevenToggle={setAppletSevenToggle}
@@ -76,6 +77,7 @@ function Dashboard({ navigation }) {
         )}
         {searchResultToggle && (
           <SearchResult
+            style={{ zIndex: 1 }}
             display={display}
             setMenuToggle={setMenuToggle}
             setOtherToggle={setSearchResultToggle}
@@ -101,19 +103,12 @@ function Dashboard({ navigation }) {
             setOtherToggle={setAppletThreeToggle}
           />
         )}
-        {appletFourToggle && (
-          // <View>
-          //   <Text>Peril Sensitive Mode</Text>
-          //   <MenuButton
-          //     setMenuToggle={setMenuToggle}
-          //     setOtherToggle={setAppletFourToggle}
-          //   />
-          // </View>
+        {/* {appletFourToggle && (
           <PerilSense
             setMenuToggle={setMenuToggle}
             setOtherToggle={setAppletFourToggle}
           />
-        )}
+        )} */}
         {appletFiveToggle && (
           <Calculator
             setMenuToggle={setMenuToggle}
