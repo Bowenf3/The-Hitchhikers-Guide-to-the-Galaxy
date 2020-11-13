@@ -56,7 +56,6 @@ function Dashboard({ navigation }) {
           setAppletOneToggle={setAppletOneToggle}
           setAppletTwoToggle={setAppletTwoToggle}
           setAppletThreeToggle={setAppletThreeToggle}
-          // setAppletFourToggle={setAppletFourToggle}
           setAppletFiveToggle={setAppletFiveToggle}
           setAppletSixToggle={setAppletSixToggle}
           setAppletSevenToggle={setAppletSevenToggle}
@@ -69,6 +68,7 @@ function Dashboard({ navigation }) {
             setAppletTwoToggle={setAppletTwoToggle}
             setAppletThreeToggle={setAppletThreeToggle}
             setAppletFourToggle={setAppletFourToggle}
+            appletFourToggle={appletFourToggle}
             setAppletFiveToggle={setAppletFiveToggle}
             setAppletSixToggle={setAppletSixToggle}
             setAppletSevenToggle={setAppletSevenToggle}

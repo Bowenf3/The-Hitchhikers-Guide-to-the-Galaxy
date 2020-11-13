@@ -18,7 +18,6 @@ function SearchBar(props) {
         props.setAppletOneToggle(false);
         props.setAppletTwoToggle(false);
         props.setAppletThreeToggle(false);
-        // props.setAppletFourToggle(false);
         props.setAppletFiveToggle(false);
         props.setAppletSixToggle(false);
         props.setAppletSevenToggle(false);

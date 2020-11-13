@@ -3,6 +3,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { BlurView } from 'expo-blur';
 import AppletButton from './AppletButton';
+import PerilModeButton from './Applets/Peril Sensitive Mode/PerilModeButton';
 
 function MenuDisplay(props) {
   return (
@@ -40,9 +41,9 @@ function MenuDisplay(props) {
           setOtherToggle={props.setAppletThreeToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
         />
-        <AppletButton
-          setMenuToggle={props.setMenuToggle}
+        <PerilModeButton
           setOtherToggle={props.setAppletFourToggle}
+          appletFourToggle={props.appletFourToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
         />
         <AppletButton
