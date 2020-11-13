@@ -13,6 +13,7 @@ import MenuButton from './MenuButton';
 import Calculator from './Applets/Calculator/Calculator';
 import CrisisInducer from './Applets/CrisisInducer/CrisisInducer';
 import PerilSense from './Applets/Peril Sensitive Mode/PerilSense';
+import TotalVortex from './Applets/Total Perspective Vortex/TotalVortex';
 
 function Dashboard({ navigation }) {
   const [text, setText] = React.useState('');
@@ -134,13 +135,14 @@ function Dashboard({ navigation }) {
           </View>
         )}
         {appletEightToggle && (
-          <View>
-            <Text>Total Perspective Vortex</Text>
-            <MenuButton
-              setMenuToggle={setMenuToggle}
-              setOtherToggle={setAppletEightToggle}
-            />
-          </View>
+          // <View>
+          //   <Text>Total Perspective Vortex</Text>
+          //   <MenuButton
+          //     setMenuToggle={setMenuToggle}
+          //     setOtherToggle={setAppletEightToggle}
+          //   />
+          // </View>
+          <TotalVortex />
         )}
         <StatusBar translucent={true} backgroundColor={'transparent'} />
       </LinearGradient>
