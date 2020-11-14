@@ -135,14 +135,10 @@ function Dashboard({ navigation }) {
           </View>
         )}
         {appletEightToggle && (
-          // <View>
-          //   <Text>Total Perspective Vortex</Text>
-          //   <MenuButton
-          //     setMenuToggle={setMenuToggle}
-          //     setOtherToggle={setAppletEightToggle}
-          //   />
-          // </View>
-          <TotalVortex />
+          <TotalVortex
+            setMenuToggle={setMenuToggle}
+            setOtherToggle={setAppletEightToggle}
+          />
         )}
         <StatusBar translucent={true} backgroundColor={'transparent'} />
       </LinearGradient>
