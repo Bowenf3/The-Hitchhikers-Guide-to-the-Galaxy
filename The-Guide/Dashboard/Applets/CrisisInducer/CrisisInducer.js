@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, Button } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
+import { Audio } from 'expo-av';
 import MenuButton from '../../MenuButton';
+import Slider from '@react-native-community/slider';
 
 function CrisisInducer(props) {
   const [timerOne, setTimerOne] = useState(0);
@@ -10,6 +12,7 @@ function CrisisInducer(props) {
   const [inputOneSecs, setInputOneSecs] = React.useState(0);
   const [timerOnePaused, setTimerOnePaused] = React.useState(true);
   const [reseted, setReseted] = React.useState(true);
+  const [crisisLevel, setCrisisLevel] = React.useState(0);
 
   const minutesOne = Math.floor(timerOne / 60);
   const secondsOne = Math.floor(timerOne % 60);
@@ -25,6 +28,32 @@ function CrisisInducer(props) {
       return () => clearTimeout(timer);
     }
   }, [timerOne, timerOneRunning]);
+
+  const sound = useRef(new Audio.Sound());
+
+  useEffect(() => {
+    (async () => {
+      Audio.setAudioModeAsync({
+        interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
+        shouldDuckAndroid: true,
+        staysActiveInBackground: false,
+        playThroughEarpieceAndroid: true,
+      });
+      const status = {
+        shouldPlay: false,
+        isLooping: true,
+      };
+      await sound.current.loadAsync(
+        require('../../../assets/18141_1464355089.mp3'),
+        status,
+        false,
+      );
+    })();
+  }, []);
+
+  const playSound = () => {
+    sound.current.playAsync();
+  };
 
   const handleReset = () => {
     setTimerOne(inputOneMins * 60 + inputOneSecs);
@@ -91,6 +120,17 @@ function CrisisInducer(props) {
       <Text>
         {formatTime(minutesOne)}:{formatTime(secondsOne)}
       </Text>
+      <Text title={'Crisis'}>Crisis Level: {crisisLevel}</Text>
+      <Slider
+        style={{ width: 300, height: 80 }}
+        minimumValue={0}
+        maximumValue={5}
+        onSlidingComplete={(value) => setCrisisLevel(value)}
+        step={1}
+        minimumTrackTintColor="#1CC625"
+        maximumTrackTintColor="green"
+        thumbTintColor="green"
+      />
       {reseted && (
         <Button
           style={{ padding: 40, margin: 1 }}
@@ -118,6 +158,7 @@ function CrisisInducer(props) {
               setTimerOneRunning(true);
               setReseted(false);
               setTimerOne(inputOneMins * 60 + inputOneSecs);
+              playSound();
             }
           }}
         />
