@@ -22,8 +22,9 @@ module.exports = {
         .then((data) => {
           if (data.status > 400) {
             throw new Error('Not found');
+          } else {
+            return data.json();
           }
-          data.json();
         })
         .then((data) => {
           const id = data.query.search[0].pageid;

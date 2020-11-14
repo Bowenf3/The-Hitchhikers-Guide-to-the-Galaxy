@@ -5,6 +5,17 @@ import { Audio } from 'expo-av';
 import MenuButton from '../../MenuButton';
 import Slider from '@react-native-community/slider';
 
+const CrisisSounds = {
+  0: require('../../../assets/alarm0.mp3'),
+  1: require('../../../assets/alarm1.mp3'),
+  2: require('../../../assets/alarm5.mp3'),
+  3: require('../../../assets/alarm4.mp3'),
+  4: require('../../../assets/alarm2.mp3'),
+  5: require('../../../assets/alarm6.mp3'),
+};
+
+const soundObject = new Audio.Sound();
+
 function CrisisInducer(props) {
   const [timerOne, setTimerOne] = useState(0);
   const [timerOneRunning, setTimerOneRunning] = React.useState(false);
@@ -29,36 +40,46 @@ function CrisisInducer(props) {
     }
   }, [timerOne, timerOneRunning]);
 
-  const sound = useRef(new Audio.Sound());
+  useEffect(
+    () => async () => {
+      return await stopSound();
+    },
+    [],
+  );
 
-  useEffect(() => {
-    (async () => {
-      Audio.setAudioModeAsync({
-        interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DUCK_OTHERS,
-        shouldDuckAndroid: true,
-        staysActiveInBackground: false,
-        playThroughEarpieceAndroid: true,
+  const playSound = async (crisisNumber) => {
+    const status = {
+      shouldPlay: false,
+      isLooping: true,
+    };
+    try {
+      let source = CrisisSounds[crisisNumber];
+      await soundObject.loadAsync(source, status, false);
+      await soundObject.playAsync().catch((error) => {
+        console.log(error);
       });
-      const status = {
-        shouldPlay: false,
-        isLooping: true,
-      };
-      await sound.current.loadAsync(
-        require('../../../assets/18141_1464355089.mp3'),
-        status,
-        false,
-      );
-    })();
-  }, []);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const playSound = () => {
-    sound.current.playAsync();
+  const unpauseSound = async () => {
+    await soundObject.playAsync();
+  };
+
+  const stopSound = async () => {
+    await soundObject.unloadAsync();
+  };
+
+  const pauseSound = async () => {
+    await soundObject.pauseAsync();
   };
 
   const handleReset = () => {
     setTimerOne(inputOneMins * 60 + inputOneSecs);
     setReseted(true);
     setTimerOneRunning(false);
+    stopSound();
   };
 
   return (
@@ -158,7 +179,7 @@ function CrisisInducer(props) {
               setTimerOneRunning(true);
               setReseted(false);
               setTimerOne(inputOneMins * 60 + inputOneSecs);
-              playSound();
+              playSound(crisisLevel);
             }
           }}
         />
@@ -172,9 +193,11 @@ function CrisisInducer(props) {
             if (timerOnePaused) {
               setTimerOneRunning(true);
               setTimerOnePaused(false);
+              unpauseSound();
             } else {
               setTimerOneRunning(false);
               setTimerOnePaused(true);
+              pauseSound();
             }
           }}
         />
