@@ -13,14 +13,18 @@ function checkForReference(input, setDisplayText) {
 
 module.exports = {
   search(input, setDisplayText) {
-    console.log('here', input);
     if (checkForReference(input, setDisplayText)) {
       return;
     } else {
       fetch(
         `http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${input}&format=json`,
       )
-        .then((data) => data.json())
+        .then((data) => {
+          if (data.status > 400) {
+            throw new Error('Not found');
+          }
+          data.json();
+        })
         .then((data) => {
           const id = data.query.search[0].pageid;
           const title = data.query.search[0].title;
@@ -33,9 +37,15 @@ module.exports = {
             });
         })
         .catch((error) => {
-          setDisplayText(
-            `Hi there! This is Eddie your shipboard computer! Just popping in to say how excited I am to be working with you guys! \n\nI see you were searching for ${input.value}... Unfortunately, our field researchers haven't added an entry for that yet! You have a great day now! \n\nShare and Enjoy!`,
-          );
+          if (error.message === 'Not found') {
+            setDisplayText(
+              `Hi there! This is Eddie your shipboard computer! Just popping in to say how excited I am to be working with you guys! \n\nI see you were searching for ${input}... Unfortunately, it looks like your Guide is having trouble connecting to the Sub-Etha net! Please check your digital watch or similar device and check it is connected to your planet's ethernet, internet, swanglefield, gggrrhhhdwqosndcX. You have a great day now! \n\nShare and Enjoy!`,
+            );
+          } else {
+            setDisplayText(
+              `Hi there! This is Eddie your shipboard computer! Just popping in to say how excited I am to be working with you guys! \n\nI see you were searching for ${input}... Unfortunately, our field researchers haven't added an entry for that yet! You have a great day now! \n\nShare and Enjoy!`,
+            );
+          }
         });
     }
   },
