@@ -80,7 +80,7 @@ function CrisisInducer(props) {
   };
 
   const handleReset = () => {
-    setTimerOne(inputOneMins * 60 + inputOneSecs);
+    setTimerOne(Number(inputOneMins) * 60 + Number(inputOneSecs));
     setReseted(true);
     setTimerOneRunning(false);
     stopSound();
