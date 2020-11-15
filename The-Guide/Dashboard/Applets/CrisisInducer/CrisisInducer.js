@@ -14,13 +14,15 @@ const CrisisSounds = {
   5: require('../../../assets/alarm6.mp3'),
 };
 
+const text = ' Crisis Level:';
+
 const soundObject = new Audio.Sound();
 
 function CrisisInducer(props) {
   const [timerOne, setTimerOne] = useState(0);
   const [timerOneRunning, setTimerOneRunning] = React.useState(false);
-  const [inputOneMins, setInputOneMins] = React.useState(0);
-  const [inputOneSecs, setInputOneSecs] = React.useState(0);
+  const [inputOneMins, setInputOneMins] = React.useState('');
+  const [inputOneSecs, setInputOneSecs] = React.useState('');
   const [timerOnePaused, setTimerOnePaused] = React.useState(true);
   const [reseted, setReseted] = React.useState(true);
   const [crisisLevel, setCrisisLevel] = React.useState(0);
@@ -34,6 +36,8 @@ function CrisisInducer(props) {
         setTimerOne((timerOne) => timerOne - 1);
         if (timerOne === 1) {
           console.log('done timering');
+          alert('Crisis complete');
+          handleReset();
         }
       }, 1000);
       return () => clearTimeout(timer);
@@ -82,6 +86,15 @@ function CrisisInducer(props) {
     stopSound();
   };
 
+  const check = (number) => {
+    number = number.split(' ').join('');
+    if (isNaN(number * 1)) {
+      return 0;
+    } else {
+      return number * 1;
+    }
+  };
+
   return (
     <View
       style={{
@@ -90,11 +103,23 @@ function CrisisInducer(props) {
         alignItems: 'center',
       }}
     >
+      <Text
+        style={{
+          color: '#94d494',
+          textShadowColor: '#66FF66',
+          textShadowRadius: 20,
+          fontSize: 30,
+          textAlign: 'center',
+        }}
+      >
+        Duration:
+      </Text>
       <View
         style={{
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
+          marginBottom: 30,
         }}
       >
         <TextInput
@@ -109,13 +134,15 @@ function CrisisInducer(props) {
             textAlign: 'center',
             fontSize: 30,
           }}
-          onChangeText={(number) => setInputOneMins(Number(number))}
+          onChangeText={(number) => setInputOneMins(String(check(number)))}
+          onFocus={() => {
+            setInputOneMins('');
+          }}
           value={String(inputOneMins)}
           keyboardType={'phone-pad'}
-          placeholder={'00'}
+          placeholder={'mins'}
           placeholderTextColor={'#1b401b'}
           selectionColor={'#94d494'}
-          onSubmitEditing={(e) => {}}
         />
         <TextInput
           style={{
@@ -129,19 +156,40 @@ function CrisisInducer(props) {
             textAlign: 'center',
             fontSize: 30,
           }}
-          onChangeText={(number) => setInputOneSecs(Number(number))}
+          onChangeText={(number) => setInputOneSecs(String(check(number)))}
+          onFocus={() => {
+            setInputOneSecs('');
+          }}
           value={String(inputOneSecs)}
           keyboardType={'phone-pad'}
-          placeholder={'00'}
+          placeholder={'secs'}
           placeholderTextColor={'#1b401b'}
           selectionColor={'#94d494'}
-          onSubmitEditing={(e) => {}}
         />
       </View>
-      <Text>
-        {formatTime(minutesOne)}:{formatTime(secondsOne)}
+      <Text
+        style={{
+          color: '#94d494',
+          textShadowColor: '#66FF66',
+          textShadowRadius: 20,
+          fontSize: 30,
+          textAlign: 'center',
+        }}
+      >
+        Time Remaining: {formatTime(minutesOne)}:{formatTime(secondsOne)}
       </Text>
-      <Text title={'Crisis'}>Crisis Level: {crisisLevel}</Text>
+      <Text
+        style={{
+          color: '#94d494',
+          textShadowColor: '#66FF66',
+          textShadowRadius: 20,
+          fontSize: 30,
+          textAlign: 'center',
+        }}
+        title={'Crisis'}
+      >
+        {text} {crisisLevel}
+      </Text>
       <Slider
         style={{ width: 300, height: 80 }}
         minimumValue={0}
@@ -152,62 +200,77 @@ function CrisisInducer(props) {
         maximumTrackTintColor="green"
         thumbTintColor="green"
       />
-      {reseted && (
-        <Button
-          style={{ padding: 40, margin: 1 }}
-          color={'green'}
-          title={'Start'}
-          onPress={(e) => {
-            // if (firstTime === true) {
-            //   setReset(() => [delay, duration]);
-            //   setFirstTime(false);
-            // }
-            // if (delay === 0) {
-            //   setDurationRunning(true);
-            // } else if (delay !== 0) {
-            //   setDelayRunning(true);
-            // } else {
-            //   alert('Please set a duration or delay');
-            // }
+      <View
+        style={{
+          // flex: 1,
+          height: 100,
+          width: 100,
+          flexDirection: 'column',
+          justifyContent: 'space-around',
+        }}
+      >
+        {reseted && (
+          <Button
+            style={{ padding: 40, margin: 1 }}
+            color={'green'}
+            title={'Start'}
+            onPress={(e) => {
+              // if (firstTime === true) {
+              //   setReset(() => [delay, duration]);
+              //   setFirstTime(false);
+              // }
+              // if (delay === 0) {
+              //   setDurationRunning(true);
+              // } else if (delay !== 0) {
+              //   setDelayRunning(true);
+              // } else {
+              //   alert('Please set a duration or delay');
+              // }
 
-            if (inputOneMins === 0 && inputOneSecs === 0) {
-              alert(
-                'Hi there!! This is Eddie your shipboard computer!\n\nPlease input a value to the timers!\n\nShare and Enjoy!',
-              );
-            } else {
-              setTimerOnePaused(false);
-              setTimerOneRunning(true);
-              setReseted(false);
-              setTimerOne(inputOneMins * 60 + inputOneSecs);
-              playSound(crisisLevel);
-            }
-          }}
-        />
-      )}
-      {!reseted && (
+              if (
+                (inputOneMins === '0' && inputOneSecs === '0') ||
+                (inputOneMins === '' && inputOneSecs === '0') ||
+                (inputOneMins === '0' && inputOneSecs === '') ||
+                (inputOneMins === '' && inputOneSecs === '')
+              ) {
+                alert(
+                  'Hi there!! This is Eddie your shipboard computer!\n\nPlease input a value to the timers!\n\nShare and Enjoy!',
+                );
+              } else {
+                setTimerOnePaused(false);
+                setTimerOneRunning(true);
+                setReseted(false);
+                setTimerOne(Number(inputOneMins) * 60 + Number(inputOneSecs));
+                playSound(crisisLevel);
+              }
+            }}
+          />
+        )}
+        {!reseted && (
+          <Button
+            style={{ padding: 40, margin: 1 }}
+            color={'green'}
+            title={timerOnePaused ? 'Unpause' : 'Pause'}
+            onPress={(e) => {
+              if (timerOnePaused) {
+                setTimerOneRunning(true);
+                setTimerOnePaused(false);
+                unpauseSound();
+              } else {
+                setTimerOneRunning(false);
+                setTimerOnePaused(true);
+                pauseSound();
+              }
+            }}
+          />
+        )}
         <Button
           style={{ padding: 40, margin: 1 }}
           color={'green'}
-          title={timerOnePaused ? 'Unpause' : 'Pause'}
-          onPress={(e) => {
-            if (timerOnePaused) {
-              setTimerOneRunning(true);
-              setTimerOnePaused(false);
-              unpauseSound();
-            } else {
-              setTimerOneRunning(false);
-              setTimerOnePaused(true);
-              pauseSound();
-            }
-          }}
+          title={'Reset'}
+          onPress={handleReset}
         />
-      )}
-      <Button
-        style={{ padding: 40, margin: 1 }}
-        color={'green'}
-        title={'Reset'}
-        onPress={handleReset}
-      />
+      </View>
       <View style={{ position: 'absolute', bottom: 5 }}>
         <MenuButton
           setMenuToggle={props.setMenuToggle}
