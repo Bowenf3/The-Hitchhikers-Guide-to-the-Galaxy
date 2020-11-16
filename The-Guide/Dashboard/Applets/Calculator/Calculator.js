@@ -28,6 +28,7 @@ function Calculator(props) {
           textShadowRadius: 20,
           textAlign: 'center',
           fontSize: 30,
+          fontFamily: 'monospace',
         }}
         onFocus={() => {
           setNumber('');

@@ -1,15 +1,21 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Image, Pressable, View } from 'react-native';
+import { Image, Pressable, View, Text } from 'react-native';
 
 function PerilModeButton(props) {
+  const toggled = props.appletFourToggle ? 'red' : 'green';
+
   return (
-    <View>
+    <View
+      style={{
+        marginBottom: 20,
+      }}
+    >
       <Pressable
         style={({ pressed }) => [
           {
             // TODO: On press make button glow
-            backgroundColor: pressed ? 'green' : 'transparent',
+            backgroundColor: pressed ? 'red' : 'transparent',
           },
         ]}
         onPress={() => {
@@ -20,10 +26,35 @@ function PerilModeButton(props) {
           }
         }}
       >
-        <Image
+        {/* <Image
           style={{ width: 90, height: 90, margin: 10 }}
           source={props.sourceFile}
-        />
+        /> */}
+        <View
+          style={{
+            borderColor: toggled,
+            // backgroundColor: 'black',
+            borderWidth: 1,
+            width: 110,
+            height: 110,
+            margin: 2,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Text
+            style={{
+              width: '90%',
+              color: '#94d494',
+              textShadowColor: '#66FF66',
+              textShadowRadius: 20,
+              textAlign: 'center',
+              fontFamily: 'monospace',
+            }}
+          >
+            Peril Sensitive Mode
+          </Text>
+        </View>
       </Pressable>
     </View>
   );

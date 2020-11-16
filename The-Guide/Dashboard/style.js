@@ -34,6 +34,7 @@ module.exports = StyleSheet.create({
     textShadowColor: '#66FF66',
     textShadowRadius: 20,
     textAlign: 'center',
+    fontFamily: 'monospace',
     top: 40,
   },
   searchresult: {
@@ -48,6 +49,7 @@ module.exports = StyleSheet.create({
   },
   text: {
     textAlign: 'auto',
+    fontFamily: 'monospace',
     color: '#94d494',
     textShadowColor: '#66FF66',
     textShadowRadius: 20,

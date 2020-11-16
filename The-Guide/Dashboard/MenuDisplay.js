@@ -1,21 +1,36 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { BlurView } from 'expo-blur';
 import AppletButton from './AppletButton';
 import PerilModeButton from './Applets/Peril Sensitive Mode/PerilModeButton';
 
 function MenuDisplay(props) {
   return (
-    <BlurView
-      intensity={40}
+    <View
       style={{
-        // backgroundColor: 'white',
+        // backgroundColor: 'red',
         padding: 10,
-        width: '70%',
-        height: '65%',
+        width: '80%',
+        height: '80%',
+        alignItems: 'center',
       }}
     >
+      <Text
+        style={{
+          color: '#94d494',
+          textShadowColor: '#66FF66',
+          textShadowRadius: 20,
+          textAlign: 'center',
+          fontSize: 30,
+          fontFamily: 'monospace',
+          margin: 30,
+          // backgroundColor: 'white',
+          width: '120%',
+        }}
+      >
+        The Hitchhiker's Guide to the Galaxy
+      </Text>
       <View
         style={{
           // backgroundColor: 'red',
@@ -27,16 +42,19 @@ function MenuDisplay(props) {
         }}
       >
         <AppletButton
+          name={'42 Uses for your Towel'}
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletOneToggle}
           sourceFile={require('../assets/towel-304192_1280.png')}
         />
         <AppletButton
+          name={''}
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletTwoToggle}
           sourceFile={require('../assets/button-155149_1280.png')}
         />
         <AppletButton
+          name={'Crisis Inducer'}
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletThreeToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
@@ -47,11 +65,12 @@ function MenuDisplay(props) {
           sourceFile={require('../assets/button-153682_1280.png')}
         />
         <AppletButton
+          name={'Deep Thought'}
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletFiveToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
         />
-        <AppletButton
+        {/* <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletSixToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
@@ -60,14 +79,15 @@ function MenuDisplay(props) {
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletSevenToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
-        />
+        /> */}
         <AppletButton
+          name={'Total Perspective Vortex'}
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletEightToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
         />
       </View>
-    </BlurView>
+    </View>
   );
 }
 export default MenuDisplay;

@@ -98,7 +98,9 @@ function CrisisInducer(props) {
   return (
     <View
       style={{
-        flex: 1,
+        // flex: 1,
+        height: '100%',
+        width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
       }}
@@ -110,6 +112,8 @@ function CrisisInducer(props) {
           textShadowRadius: 20,
           fontSize: 30,
           textAlign: 'center',
+          fontFamily: 'monospace',
+          marginBottom: 10,
         }}
       >
         Duration:
@@ -133,6 +137,7 @@ function CrisisInducer(props) {
             textShadowRadius: 20,
             textAlign: 'center',
             fontSize: 30,
+            fontFamily: 'monospace',
           }}
           onChangeText={(number) => setInputOneMins(String(check(number)))}
           onFocus={() => {
@@ -155,6 +160,7 @@ function CrisisInducer(props) {
             textShadowRadius: 20,
             textAlign: 'center',
             fontSize: 30,
+            fontFamily: 'monospace',
           }}
           onChangeText={(number) => setInputOneSecs(String(check(number)))}
           onFocus={() => {
@@ -174,9 +180,10 @@ function CrisisInducer(props) {
           textShadowRadius: 20,
           fontSize: 30,
           textAlign: 'center',
+          fontFamily: 'monospace',
         }}
       >
-        Time Remaining: {formatTime(minutesOne)}:{formatTime(secondsOne)}
+        Time Remaining:
       </Text>
       <Text
         style={{
@@ -185,6 +192,19 @@ function CrisisInducer(props) {
           textShadowRadius: 20,
           fontSize: 30,
           textAlign: 'center',
+          fontFamily: 'monospace',
+        }}
+      >
+        {formatTime(minutesOne)}:{formatTime(secondsOne)}
+      </Text>
+      <Text
+        style={{
+          color: '#94d494',
+          textShadowColor: '#66FF66',
+          textShadowRadius: 20,
+          fontSize: 30,
+          textAlign: 'center',
+          fontFamily: 'monospace',
         }}
         title={'Crisis'}
       >
@@ -211,7 +231,7 @@ function CrisisInducer(props) {
       >
         {reseted && (
           <Button
-            style={{ padding: 40, margin: 1 }}
+            style={{ padding: 40, margin: 1, fontFamily: 'monospace' }}
             color={'green'}
             title={'Start'}
             onPress={(e) => {
@@ -248,7 +268,7 @@ function CrisisInducer(props) {
         )}
         {!reseted && (
           <Button
-            style={{ padding: 40, margin: 1 }}
+            style={{ padding: 40, margin: 1, fontFamily: 'monospace' }}
             color={'green'}
             title={timerOnePaused ? 'Unpause' : 'Pause'}
             onPress={(e) => {
@@ -265,7 +285,7 @@ function CrisisInducer(props) {
           />
         )}
         <Button
-          style={{ padding: 40, margin: 1 }}
+          style={{ padding: 40, margin: 1, fontFamily: 'monospace' }}
           color={'green'}
           title={'Reset'}
           onPress={handleReset}
