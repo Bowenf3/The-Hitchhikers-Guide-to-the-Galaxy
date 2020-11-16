@@ -29,25 +29,90 @@ function Dashboard({ navigation }) {
   const [appletSixToggle, setAppletSixToggle] = React.useState(false);
   const [appletSevenToggle, setAppletSevenToggle] = React.useState(false);
   const [appletEightToggle, setAppletEightToggle] = React.useState(false);
-  const vector = useRef(new Animated.Value(-260)).current;
+  const vector = useRef(new Animated.Value(-400)).current;
+  const vectorTwo = useRef(new Animated.Value(-400)).current;
+  const vectorThree = useRef(new Animated.Value(-400)).current;
+  const vectorFour = useRef(new Animated.Value(-400)).current;
+  const vectorFive = useRef(new Animated.Value(-400)).current;
 
   useFocusEffect(() => {
     Animated.loop(
       Animated.timing(vector, {
-        toValue: 270,
+        toValue: 350,
         duration: 10000,
         useNativeDriver: true,
         easing: Easing.linear,
       }),
     ).start(),
-      console.log('called', vector);
+      Animated.loop(
+        Animated.timing(vectorTwo, {
+          toValue: 350,
+          duration: 10000,
+          useNativeDriver: true,
+          delay: Math.floor(Math.random() * 2000) + 1000,
+          easing: Easing.linear,
+        }),
+      ).start(),
+      Animated.loop(
+        Animated.timing(vectorThree, {
+          toValue: 350,
+          duration: 10000,
+          useNativeDriver: true,
+          delay: Math.floor(Math.random() * 2000) + 3000,
+          easing: Easing.linear,
+        }),
+      ).start(),
+      Animated.loop(
+        Animated.timing(vectorFour, {
+          toValue: 350,
+          duration: 10000,
+          useNativeDriver: true,
+          delay: Math.floor(Math.random() * 2000) + 5000,
+          easing: Easing.linear,
+        }),
+      ).start(),
+      Animated.loop(
+        Animated.timing(vectorFive, {
+          toValue: 350,
+          duration: 10000,
+          useNativeDriver: true,
+          delay: Math.floor(Math.random() * 2000) + 7000,
+          easing: Easing.linear,
+        }),
+      ).start(),
+      console.log('called');
   }, []);
 
   useFocusEffect(
     () => () => {
-      return vector.setValue(-260);
+      return vector.setValue(-400);
     },
     [vector],
+  );
+
+  useFocusEffect(
+    () => () => {
+      return vectorTwo.setValue(-400);
+    },
+    [vectorTwo],
+  );
+  useFocusEffect(
+    () => () => {
+      return vectorThree.setValue(-400);
+    },
+    [vectorThree],
+  );
+  useFocusEffect(
+    () => () => {
+      return vectorFour.setValue(-400);
+    },
+    [vectorFour],
+  );
+  useFocusEffect(
+    () => () => {
+      return vectorFive.setValue(-400);
+    },
+    [vectorFive],
   );
 
   return (
@@ -74,11 +139,69 @@ function Dashboard({ navigation }) {
           style={{
             position: 'absolute',
             elevation: 2,
+            height: 20,
+            width: '100%',
+            opacity: 0.05,
+            backgroundColor: 'black',
+            borderWidth: 3,
+            borderColor: 'grey',
+            transform: [{ translateY: vector }],
+          }}
+        />
+        <Animated.View
+          pointerEvents={'box-none'}
+          style={{
+            position: 'absolute',
+            elevation: 2,
             height: 10,
             width: '100%',
             opacity: 0.05,
-            backgroundColor: 'white',
-            transform: [{ translateY: vector }],
+            backgroundColor: 'black',
+            borderWidth: 3,
+            borderColor: 'grey',
+            transform: [{ translateY: vectorTwo }],
+          }}
+        />
+        <Animated.View
+          pointerEvents={'box-none'}
+          style={{
+            position: 'absolute',
+            elevation: 2,
+            height: 8,
+            width: '100%',
+            opacity: 0.05,
+            backgroundColor: 'black',
+            borderWidth: 3,
+            borderColor: 'grey',
+            transform: [{ translateY: vectorThree }],
+          }}
+        />
+        <Animated.View
+          pointerEvents={'box-none'}
+          style={{
+            position: 'absolute',
+            elevation: 2,
+            height: 12,
+            width: '100%',
+            opacity: 0.05,
+            backgroundColor: 'black',
+            borderWidth: 3,
+            borderColor: 'grey',
+            transform: [{ translateY: vectorFour }],
+          }}
+        />
+        <Animated.View
+          pointerEvents={'box-none'}
+          style={{
+            position: 'absolute',
+            elevation: 2,
+            height: 10,
+            width: '100%',
+            opacity: 0.05,
+            backgroundColor: 'black',
+            borderWidth: 3,
+            borderColor: 'grey',
+            transform: [{ translateY: vectorFive }],
           }}
         />
         <SearchBar
