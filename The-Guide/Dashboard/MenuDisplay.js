@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { View, Text } from 'react-native';
-import { BlurView } from 'expo-blur';
 import AppletButton from './AppletButton';
 import PerilModeButton from './Applets/Peril Sensitive Mode/PerilModeButton';
 

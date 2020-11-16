@@ -260,12 +260,6 @@ function Dashboard({ navigation }) {
             setOtherToggle={setAppletThreeToggle}
           />
         )}
-        {/* {appletFourToggle && (
-          <PerilSense
-            setMenuToggle={setMenuToggle}
-            setOtherToggle={setAppletFourToggle}
-          />
-        )} */}
         {appletFiveToggle && (
           <Calculator
             setMenuToggle={setMenuToggle}

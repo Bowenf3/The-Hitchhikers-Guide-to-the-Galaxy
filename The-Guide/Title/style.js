@@ -6,8 +6,8 @@ module.exports = StyleSheet.create({
     backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%',
-    height: '100%',
+    // width: '100%',
+    // height: '100%',
   },
   background: {
     width: '100%',
@@ -25,10 +25,10 @@ module.exports = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '30%',
+    height: '100%',
   },
   pressable: {
-    flex: 1,
+    // flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
