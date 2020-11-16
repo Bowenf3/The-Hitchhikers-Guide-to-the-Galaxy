@@ -1,8 +1,9 @@
 import 'react-native-gesture-handler';
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useRef } from 'react';
+import { Animated, View, Text, Easing } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useFocusEffect } from '@react-navigation/native';
 const styles = require('./style');
 const { towel } = require('../assets/towel-uses.json');
 
@@ -28,6 +29,26 @@ function Dashboard({ navigation }) {
   const [appletSixToggle, setAppletSixToggle] = React.useState(false);
   const [appletSevenToggle, setAppletSevenToggle] = React.useState(false);
   const [appletEightToggle, setAppletEightToggle] = React.useState(false);
+  const vector = useRef(new Animated.Value(-260)).current;
+
+  useFocusEffect(() => {
+    Animated.loop(
+      Animated.timing(vector, {
+        toValue: 270,
+        duration: 10000,
+        useNativeDriver: true,
+        easing: Easing.linear,
+      }),
+    ).start(),
+      console.log('called', vector);
+  }, []);
+
+  useFocusEffect(
+    () => () => {
+      return vector.setValue(-260);
+    },
+    [vector],
+  );
 
   return (
     <View style={styles.view}>
@@ -48,6 +69,18 @@ function Dashboard({ navigation }) {
           'black',
         ]}
       >
+        <Animated.View
+          pointerEvents={'box-none'}
+          style={{
+            position: 'absolute',
+            elevation: 2,
+            height: 10,
+            width: '100%',
+            opacity: 0.05,
+            backgroundColor: 'white',
+            transform: [{ translateY: vector }],
+          }}
+        />
         <SearchBar
           setText={setText}
           value={text}

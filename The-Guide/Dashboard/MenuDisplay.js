@@ -24,7 +24,7 @@ function MenuDisplay(props) {
           textAlign: 'center',
           fontSize: 30,
           fontFamily: 'monospace',
-          margin: 30,
+          margin: 16,
           // backgroundColor: 'white',
           width: '120%',
         }}
