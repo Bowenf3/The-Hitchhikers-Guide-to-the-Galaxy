@@ -47,7 +47,7 @@ function MenuDisplay(props) {
           sourceFile={require('../assets/towel-304192_1280.png')}
         />
         <AppletButton
-          name={''}
+          name={"Don't press this button"}
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletTwoToggle}
           sourceFile={require('../assets/button-155149_1280.png')}

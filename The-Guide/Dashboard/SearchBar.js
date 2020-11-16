@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextInput } from 'react-native';
 const apiClientService = require('../ApiClientService');
 const styles = require('./style');
 
 function SearchBar(props) {
+  const [keyboard, setKeyboard] = useState(false);
+
+  useEffect(() => {
+    setKeyboard(true);
+  }, []);
+
+  useEffect(
+    () => () => {
+      return setKeyboard(false);
+    },
+    [],
+  );
+
   return (
     <TextInput
+      autoFocus={true}
+      showSoftInputOnFocus={keyboard}
       style={styles.textinput}
       onChangeText={(text) => props.setText(text)}
       value={props.value}

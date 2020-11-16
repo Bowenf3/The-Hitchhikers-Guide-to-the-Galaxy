@@ -7,9 +7,13 @@ import {
   Image,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
+import { Audio } from 'expo-av';
 const styles = require('./style');
+
+const music = require('../assets/ThemeSong.mp3');
+const soundObject = new Audio.Sound();
 
 function TitleScreen({ navigation }) {
   const fadeIn = useRef(new Animated.Value(0)).current;
@@ -17,7 +21,28 @@ function TitleScreen({ navigation }) {
   const snapShut = useRef(new Animated.Value(0)).current;
   const snapShutTwo = useRef(new Animated.Value(800)).current;
 
+  const playSound = async () => {
+    const status = {
+      shouldPlay: false,
+      isLooping: true,
+    };
+    try {
+      let source = music;
+      await soundObject.loadAsync(source, status, false);
+      await soundObject.playAsync().catch((error) => {
+        console.log(error);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const stopSound = async () => {
+    await soundObject.unloadAsync();
+  };
+
   useFocusEffect(() => {
+    playSound();
     Animated.timing(fadeIn, {
       toValue: 1,
       duration: 10000,
@@ -29,6 +54,7 @@ function TitleScreen({ navigation }) {
   useFocusEffect(
     () => () => {
       return (
+        stopSound(),
         fadeIn.setValue(0),
         greenIn.setValue(0),
         snapShut.setValue(0),
