@@ -15,6 +15,7 @@ import Calculator from './Applets/Calculator/Calculator';
 import CrisisInducer from './Applets/CrisisInducer/CrisisInducer';
 import PerilSense from './Applets/Peril Sensitive Mode/PerilSense';
 import TotalVortex from './Applets/Total Perspective Vortex/TotalVortex';
+import BabelFish from './Applets/Babel Fish/BabelFish';
 
 function Dashboard({ navigation }) {
   const [text, setText] = React.useState('');
@@ -280,13 +281,10 @@ function Dashboard({ navigation }) {
           </View>
         )}
         {appletSevenToggle && (
-          <View>
-            <Text>Babel Fish</Text>
-            <MenuButton
-              setMenuToggle={setMenuToggle}
-              setOtherToggle={setAppletSevenToggle}
-            />
-          </View>
+          <BabelFish
+            setMenuToggle={setMenuToggle}
+            setOtherToggle={setAppletSevenToggle}
+          />
         )}
         {appletEightToggle && (
           <TotalVortex

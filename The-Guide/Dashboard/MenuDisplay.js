@@ -75,11 +75,12 @@ function MenuDisplay(props) {
           setOtherToggle={props.setAppletSixToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
         /> */}
-        {/* <AppletButton
+        <AppletButton
+          name={'Babel Fish'}
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletSevenToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
-        /> */}
+        />
         <AppletButton
           name={'Total Perspective Vortex'}
           setMenuToggle={props.setMenuToggle}
