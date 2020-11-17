@@ -52,7 +52,7 @@ export default function PerilSense(props) {
       pointerEvents={'box-none'}
       style={{
         position: 'absolute',
-        elevation: 3,
+        elevation: 4,
         height: '100%',
         width: '100%',
         opacity: round(dark),

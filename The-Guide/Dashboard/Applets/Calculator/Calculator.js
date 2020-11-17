@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { View, TextInput, Text } from 'react-native';
 import MenuButton from '../../MenuButton';
 import { Audio } from 'expo-av';
-const music = require('../../../assets/DeepThoughtSound.mp3');
+const music = require('../../../assets/DeepThought.mp3');
 const soundObject = new Audio.Sound();
 
 function Calculator(props) {

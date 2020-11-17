@@ -12,7 +12,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { Audio } from 'expo-av';
 const styles = require('./style');
 
-const music = require('../assets/ThemeSong.mp3');
+const music = require('../assets/MovieTitleTheme.mp3');
 const soundObject = new Audio.Sound();
 
 function TitleScreen({ navigation }) {
