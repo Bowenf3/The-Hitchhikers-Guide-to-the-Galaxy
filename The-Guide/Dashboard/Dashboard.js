@@ -221,6 +221,8 @@ function Dashboard({ navigation }) {
         {menuToggle && (
           <MenuDisplay
             setMenuToggle={setMenuToggle}
+            setSearchResultToggle={setSearchResultToggle}
+            setDisplayText={setDisplayText}
             setAppletOneToggle={setAppletOneToggle}
             setAppletTwoToggle={setAppletTwoToggle}
             setAppletThreeToggle={setAppletThreeToggle}
@@ -234,8 +236,8 @@ function Dashboard({ navigation }) {
         )}
         {searchResultToggle && (
           <SearchResult
-            style={{ zIndex: 1 }}
             display={display}
+            setDisplayText={setDisplayText}
             setMenuToggle={setMenuToggle}
             setOtherToggle={setSearchResultToggle}
           />
@@ -243,6 +245,7 @@ function Dashboard({ navigation }) {
         {appletOneToggle && (
           <SearchResult
             display={towel}
+            setDisplayText={setDisplayText}
             setMenuToggle={setMenuToggle}
             setOtherToggle={setAppletOneToggle}
           />
@@ -250,6 +253,7 @@ function Dashboard({ navigation }) {
         {appletTwoToggle && (
           <SearchResult
             display={'Please do not press this button again'}
+            setDisplayText={setDisplayText}
             setMenuToggle={setMenuToggle}
             setOtherToggle={setAppletTwoToggle}
           />

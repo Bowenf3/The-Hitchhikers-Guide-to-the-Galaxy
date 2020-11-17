@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import AppletButton from './AppletButton';
 import PerilModeButton from './Applets/Peril Sensitive Mode/PerilModeButton';
+import Improbable from './Applets/Improbability Drive/Improbable';
 
 function MenuDisplay(props) {
   return (
@@ -73,8 +74,8 @@ function MenuDisplay(props) {
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletSixToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
-        />
-        <AppletButton
+        /> */}
+        {/* <AppletButton
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletSevenToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
@@ -84,6 +85,11 @@ function MenuDisplay(props) {
           setMenuToggle={props.setMenuToggle}
           setOtherToggle={props.setAppletEightToggle}
           sourceFile={require('../assets/button-153682_1280.png')}
+        />
+        <Improbable
+          setMenuToggle={props.setMenuToggle}
+          setOtherToggle={props.setSearchResultToggle}
+          setDisplayText={props.setDisplayText}
         />
       </View>
     </View>

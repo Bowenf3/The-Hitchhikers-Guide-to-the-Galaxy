@@ -1,8 +1,8 @@
-import 'react-native-gesture-handler';
 import React from 'react';
-import { Image, Pressable, View, Text } from 'react-native';
+import { Pressable, View, Text } from 'react-native';
+const apiClientService = require('../../../ApiClientService');
 
-function AppletButton(props) {
+function Improbable(props) {
   return (
     <View
       style={{
@@ -17,19 +17,16 @@ function AppletButton(props) {
           },
         ]}
         onPress={() => {
+          props.setDisplayText('Loading...');
+          apiClientService.random(props.setDisplayText);
           props.setMenuToggle(false);
           props.setOtherToggle(true);
         }}
       >
-        {/* <Image
-          style={{ width: 90, height: 90, margin: 10 }}
-          source={props.sourceFile}
-        /> */}
         <View
           style={{
             borderColor: 'green',
             // backgroundColor: 'black',
-            borderStyle: 'dashed',
             borderWidth: 1,
             width: 110,
             height: 90,
@@ -48,11 +45,11 @@ function AppletButton(props) {
               fontFamily: 'monospace',
             }}
           >
-            {props.name}
+            Improb-ability Drive
           </Text>
         </View>
       </Pressable>
     </View>
   );
 }
-export default AppletButton;
+export default Improbable;

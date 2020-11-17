@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Image, Pressable, View, Text } from 'react-native';
+import { Pressable, View, Text } from 'react-native';
 
 function PerilModeButton(props) {
   const toggled = props.appletFourToggle ? 'red' : 'green';
@@ -36,7 +36,7 @@ function PerilModeButton(props) {
             // backgroundColor: 'black',
             borderWidth: 1,
             width: 110,
-            height: 110,
+            height: 90,
             margin: 2,
             justifyContent: 'center',
             alignItems: 'center',

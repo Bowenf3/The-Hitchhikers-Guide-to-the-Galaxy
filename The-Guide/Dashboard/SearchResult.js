@@ -1,11 +1,18 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import MenuButton from './MenuButton';
 const styles = require('./style');
 
 function SearchResult(props) {
+  useEffect(
+    () => () => {
+      return props.setDisplayText('Loading...');
+    },
+    [],
+  );
+
   return (
     <View style={styles.searchresult}>
       <ScrollView
