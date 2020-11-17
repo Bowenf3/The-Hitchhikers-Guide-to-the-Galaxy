@@ -17,7 +17,7 @@ function SearchResult(props) {
     <View style={styles.searchresult}>
       <ScrollView
         fadingEdgeLength={100}
-        ref={props.scroll}
+        // ref={props.scroll}
         style={styles.scrollview}
       >
         <Text style={styles.text}>{props.display}</Text>

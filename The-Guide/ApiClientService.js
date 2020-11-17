@@ -85,4 +85,27 @@ module.exports = {
         }
       });
   },
+  translate(text, languageCode, setReturnTranslation) {
+    setReturnTranslation(text);
+    text.trim();
+    fetch(
+      `https://translation.googleapis.com/language/translate/v2/?key=${process.env.REACT_NATIVE_TRANSLATE_API_KEY}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          q: text,
+          source: 'en',
+          target: languageCode,
+          format: 'text',
+        }),
+      },
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setReturnTranslation(res.data.translations[0].translatedText);
+      });
+  },
 };
