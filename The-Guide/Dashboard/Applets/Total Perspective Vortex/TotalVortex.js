@@ -70,6 +70,18 @@ function TotalVortex(props) {
           style={{ width: 300, height: 300 }}
         />
       </View>
+      <Text
+        style={{
+          color: '#94d494',
+          textShadowColor: '#66FF66',
+          textShadowRadius: 20,
+          textAlign: 'center',
+          fontFamily: 'monospace',
+          marginLeft: 5,
+        }}
+      >
+        Made with thanks to: ESO/spaceengine.org/L.Calçada. Music: Monolake
+      </Text>
       <View style={{ position: 'absolute', bottom: 5 }}>
         <MenuButton
           setMenuToggle={props.setMenuToggle}

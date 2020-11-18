@@ -42,6 +42,7 @@ function TitleScreen({ navigation }) {
   };
 
   useFocusEffect(() => {
+    snapShut.setValue(0), snapShutTwo.setValue(800);
     playSound();
     Animated.timing(fadeIn, {
       toValue: 1,
@@ -53,13 +54,7 @@ function TitleScreen({ navigation }) {
 
   useFocusEffect(
     () => () => {
-      return (
-        stopSound(),
-        fadeIn.setValue(0),
-        greenIn.setValue(0),
-        snapShut.setValue(0),
-        snapShutTwo.setValue(800)
-      );
+      return stopSound(), fadeIn.setValue(0), greenIn.setValue(0);
     },
     [fadeIn],
   );
