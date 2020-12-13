@@ -7,14 +7,12 @@ To Start - (cd The Guide) then (npm install) then (npm start) to start expo. Eit
 To use the babel fish you will need to create a .env file in the top level of The Guide with a variable of REACT_NATIVE_TRANSLATE_API_KEY=yourgoogletranslateapikeyhere - requires a developer account with google cloud and an api key for the google translate basic: https://cloud.google.com/translate/docs
 
 <div>
-  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
-  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
-  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
-  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
-  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
+  <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
+  <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104550_Expo.jpg' />
+  <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104602_Expo.jpg' />
+  <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104646_Expo.jpg' />
+  <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104657_Expo.jpg' />
 </div>
-
-
 
 To Thank:
 https://pixabay.com/vectors/hand-like-thumb-up-confirm-okay-157251/
