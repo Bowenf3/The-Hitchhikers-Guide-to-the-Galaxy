@@ -8,6 +8,10 @@ To use the babel fish you will need to create a .env file in the top level of Th
 
 <div>
   <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
+  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
+  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
+  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
+  <img width=350 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104530_Expo.jpg' />
 </div>
 
 
