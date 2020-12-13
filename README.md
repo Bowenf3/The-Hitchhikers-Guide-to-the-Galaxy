@@ -7,6 +7,8 @@ To Start - (cd The Guide) then (npm install) then (npm start) to start expo. Eit
 To use the babel fish you will need to create a .env file in the top level of The Guide with a variable of REACT_NATIVE_TRANSLATE_API_KEY=yourgoogletranslateapikeyhere - requires a developer account with google cloud and an api key for the google translate basic: https://cloud.google.com/translate/docs
 
 
+
+
 To Thank:
 https://pixabay.com/vectors/hand-like-thumb-up-confirm-okay-157251/
 https://www.h2g2.com/entry/A667253
