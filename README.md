@@ -12,6 +12,7 @@ To use the babel fish you will need to create a .env file in the top level of Th
   <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104602_Expo.jpg' />
   <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104646_Expo.jpg' />
   <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-104657_Expo.jpg' />
+  <img width=300 src='https://github.com/Bowenf3/The-Hitchhikers-Guide-to-the-Galaxy/blob/main/Screenshot_20201213-110138_Expo.jpg' />
 </div>
 
 To Thank:
