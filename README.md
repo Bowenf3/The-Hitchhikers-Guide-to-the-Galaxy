@@ -6,7 +6,7 @@ Built soley by myself in 6 days during the solo project phase of the Codeworks B
 To Start - (cd The Guide) then (npm install) then (npm start) to start expo. Either Download the expo app and scan the QR code or run an android emulator.
 To use the babel fish you will need to create a .env file in the top level of The Guide with a variable of REACT_NATIVE_TRANSLATE_API_KEY=yourgoogletranslateapikeyhere - requires a developer account with google cloud and an api key for the google translate basic: https://cloud.google.com/translate/docs
 
-
+![alt text](/)
 
 
 To Thank:
