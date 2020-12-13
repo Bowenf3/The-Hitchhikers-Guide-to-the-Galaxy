@@ -1,6 +1,11 @@
 # The-Hitchhikers-Guide-to-the-Galaxy
 
-A wholly remarkable app. Built as a tribute to Mr D. Adams.
+A wholly remarkable app. Built as a tribute to Mr D. Adams. Permission to distibute as a free software has been sought from the DA estate but has not been granted.
+Built soley by myself in 6 days during the solo project phase of the Codeworks Bootcamp Winter 2020. 
+
+To Start - (cd The Guide) then (npm install) then (npm start) to start expo. Either Download the expo app and scan the QR code or run an android emulator.
+To use the babel fish you will need to create a .env file in the top level of The Guide with a variable of REACT_NATIVE_TRANSLATE_API_KEY=yourgoogletranslateapikeyhere - requires a developer account with google cloud and an api key for the google translate basic: https://cloud.google.com/translate/docs
+
 
 To Thank:
 https://pixabay.com/vectors/hand-like-thumb-up-confirm-okay-157251/
@@ -8,15 +13,13 @@ https://www.h2g2.com/entry/A667253
 ESO/spaceengine.org/L.Calçada. Music: Monolake
 https://freesfx.co.uk/
 
-To Start - (cd The Guide) then (npm install) then (npm start) to start expo. Either Download the expo app and scan the QR code or run an android emulator.
-
-Proposed features include:
+Features include:
 
 1. Wikipedia search function (repository of all the information in the universe) COMPLETE
 2. Random Wikipedia article generator (infinite improbability drive) COMPLETE
 3. Demotivational quote generator (Marvin the paranoid android's quote of the day) 
 4. Calculator that calculates the ultimate answer (Deep Thought - calculator that always spits out the number 42) COMPLETE
-5. 101 Uses for your Towel
+5. 101 Uses for your Towel COMPLETE (only 42)
 6. Timed alarm and sound generator (Crisis inducer - set your crisis level, timer and delay) COMPLETE
 7. Poetry generator (Vogon poetry generator - terrible nonsense poems)
 8. Google Earth zoom out (Total Perspective Vortex - starts on your zoomed in location and zooms out until you are a dot on a dot in the universe) COMPLETE
