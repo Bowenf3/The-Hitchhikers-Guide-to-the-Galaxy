@@ -39,7 +39,6 @@ function SearchBar(props) {
         props.setAppletEightToggle(false);
         props.setDisplayText('Loading...');
         apiClientService.search(props.value, props.setDisplayText);
-        console.log(props.value);
         props.setText('');
       }}
     />

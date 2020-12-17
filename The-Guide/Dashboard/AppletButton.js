@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Image, Pressable, View, Text } from 'react-native';
+import { Pressable, View, Text } from 'react-native';
 
 function AppletButton(props) {
   return (
@@ -12,7 +12,6 @@ function AppletButton(props) {
       <Pressable
         style={({ pressed }) => [
           {
-            // TODO: On press make button glow
             backgroundColor: pressed ? 'green' : 'transparent',
           },
         ]}
@@ -21,14 +20,9 @@ function AppletButton(props) {
           props.setOtherToggle(true);
         }}
       >
-        {/* <Image
-          style={{ width: 90, height: 90, margin: 10 }}
-          source={props.sourceFile}
-        /> */}
         <View
           style={{
             borderColor: 'green',
-            // backgroundColor: 'black',
             borderStyle: 'dashed',
             borderWidth: 1,
             width: 110,

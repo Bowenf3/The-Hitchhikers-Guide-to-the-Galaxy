@@ -8,7 +8,6 @@ function MenuButton(props) {
       <Pressable
         style={({ pressed }) => [
           {
-            // TODO: On press make button glow
             backgroundColor: pressed ? 'green' : 'transparent',
           },
         ]}

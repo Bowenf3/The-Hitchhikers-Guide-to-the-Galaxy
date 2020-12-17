@@ -14,7 +14,6 @@ function PerilModeButton(props) {
       <Pressable
         style={({ pressed }) => [
           {
-            // TODO: On press make button glow
             backgroundColor: pressed ? 'red' : 'transparent',
           },
         ]}
@@ -26,14 +25,9 @@ function PerilModeButton(props) {
           }
         }}
       >
-        {/* <Image
-          style={{ width: 90, height: 90, margin: 10 }}
-          source={props.sourceFile}
-        /> */}
         <View
           style={{
             borderColor: toggled,
-            // backgroundColor: 'black',
             borderWidth: 1,
             width: 110,
             height: 90,

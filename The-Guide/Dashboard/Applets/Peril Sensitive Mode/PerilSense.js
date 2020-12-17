@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
-import { Overlay } from 'react-native-elements';
+import { View } from 'react-native';
 import { Accelerometer } from 'expo-sensors';
 
 export default function PerilSense(props) {
@@ -58,6 +57,6 @@ export default function PerilSense(props) {
         opacity: round(dark),
         backgroundColor: 'black',
       }}
-    ></View>
+    />
   );
 }

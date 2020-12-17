@@ -12,7 +12,6 @@ function Improbable(props) {
       <Pressable
         style={({ pressed }) => [
           {
-            // TODO: On press make button glow
             backgroundColor: pressed ? 'green' : 'transparent',
           },
         ]}
@@ -26,7 +25,6 @@ function Improbable(props) {
         <View
           style={{
             borderColor: 'green',
-            // backgroundColor: 'black',
             borderWidth: 1,
             width: 110,
             height: 90,

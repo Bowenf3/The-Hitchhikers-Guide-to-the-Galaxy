@@ -29,13 +29,11 @@ function BabelFish(props) {
     >
       <View
         style={{
-          // flex: 1,
           width: '80%',
           height: '60%',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          // backgroundColor: 'red',
         }}
       >
         <Text
@@ -85,7 +83,6 @@ function BabelFish(props) {
             textShadowColor: '#66FF66',
             textShadowRadius: 20,
             textAlign: 'center',
-            // fontSize: 30,
             fontFamily: 'monospace',
           }}
           onChangeText={(text) => setToTranslate(text)}

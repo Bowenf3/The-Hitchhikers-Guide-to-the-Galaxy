@@ -49,7 +49,6 @@ function TitleScreen({ navigation }) {
       duration: 10000,
       useNativeDriver: true,
     }).start();
-    console.log('called', fadeIn);
   }, [fadeIn]);
 
   useFocusEffect(
@@ -108,7 +107,7 @@ function TitleScreen({ navigation }) {
             opacity: greenIn,
             backgroundColor: '#102610',
           }}
-        ></Animated.View>
+        />
         <Animated.View
           style={{
             position: 'absolute',

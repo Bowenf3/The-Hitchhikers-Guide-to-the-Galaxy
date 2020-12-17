@@ -9,7 +9,6 @@ function MenuDisplay(props) {
   return (
     <View
       style={{
-        // backgroundColor: 'red',
         padding: 10,
         width: '80%',
         height: '80%',
@@ -25,7 +24,6 @@ function MenuDisplay(props) {
           fontSize: 30,
           fontFamily: 'monospace',
           margin: 16,
-          // backgroundColor: 'white',
           width: '120%',
         }}
       >
@@ -33,7 +31,6 @@ function MenuDisplay(props) {
       </Text>
       <View
         style={{
-          // backgroundColor: 'red',
           flex: 1,
           justifyContent: 'space-around',
           alignItems: 'center',

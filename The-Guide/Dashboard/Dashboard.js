@@ -80,8 +80,7 @@ function Dashboard({ navigation }) {
           delay: Math.floor(Math.random() * 2000) + 7000,
           easing: Easing.linear,
         }),
-      ).start(),
-      console.log('called');
+      ).start();
   }, []);
 
   useFocusEffect(

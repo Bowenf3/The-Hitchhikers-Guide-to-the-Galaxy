@@ -35,7 +35,6 @@ function CrisisInducer(props) {
       let timer = setTimeout(() => {
         setTimerOne((timerOne) => timerOne - 1);
         if (timerOne === 1) {
-          console.log('done timering');
           alert('Crisis complete');
           handleReset();
         }
@@ -98,7 +97,6 @@ function CrisisInducer(props) {
   return (
     <View
       style={{
-        // flex: 1,
         height: '100%',
         width: '80%',
         justifyContent: 'center',
@@ -222,7 +220,6 @@ function CrisisInducer(props) {
       />
       <View
         style={{
-          // flex: 1,
           height: 100,
           width: 100,
           flexDirection: 'column',
@@ -235,18 +232,6 @@ function CrisisInducer(props) {
             color={'green'}
             title={'Start'}
             onPress={(e) => {
-              // if (firstTime === true) {
-              //   setReset(() => [delay, duration]);
-              //   setFirstTime(false);
-              // }
-              // if (delay === 0) {
-              //   setDurationRunning(true);
-              // } else if (delay !== 0) {
-              //   setDelayRunning(true);
-              // } else {
-              //   alert('Please set a duration or delay');
-              // }
-
               if (
                 (inputOneMins === '0' && inputOneSecs === '0') ||
                 (inputOneMins === '' && inputOneSecs === '0') ||
